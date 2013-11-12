@@ -16,13 +16,23 @@ namespace s00117372CA1.Controllers
         //
         // GET: /Order/
 
-        public ActionResult Index()
+        /*public ActionResult Index()
         {
-            return View(db.Orders.ToList());
-        }
+                return View(db.Orders.ToList());
+        }*/
 
         //
         // GET: /Order/Details/5
+
+        public ActionResult Index(string searchTerm)
+        {
+            var allOrders = db.Orders
+            .Where(ar => searchTerm == null || ar.FirstName.Contains(searchTerm) || ar.LastName.Contains(searchTerm))
+            .OrderBy(a => a.OrderId);
+            return View(allOrders);
+            //var findOrders = ordb.OrderDetails.Where(a => a.Album.Title.Contains(searchTerm));
+            //return View("Index", findOrders);
+        }
 
         public ActionResult Details(int id = 1)
         {

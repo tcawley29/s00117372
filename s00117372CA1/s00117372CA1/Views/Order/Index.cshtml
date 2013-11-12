@@ -1,21 +1,38 @@
-﻿@model IEnumerable<s00117372CA1.Order>
+﻿
+@model IEnumerable<s00117372CA1.Order>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Order List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*<form>
+    <input type="text" name="searchTerm"/>
+    <input type="submit" value="Search by Name"/>
+</form>
+*@
+<form method="GET">
+    <div class="row" role="form">
+        <div class="form-group col-md-2">
+            <label for="searchTerm">Search For</label>
+            <input type="text" name="searchTerm" class="form-control"/>
+        </div>
+        <div class="form-group col-md-2">
+            <label>&nbsp;</label>
+            <input type="submit" value="Search by Name" 
+                   class="btn btn-primary form-control"/>
+        </div>
+    </div>
+</form>
+
 <table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Username)<a href="~/Views/Order/Index.cshtml">~/Views/Order/Index.cshtml</a>
+            @Html.DisplayNameFor(model => model.Username)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -89,9 +106,7 @@
             @Html.DisplayFor(modelItem => item.Total)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId }) |
             @Html.ActionLink("Details", "Details", new { id=item.OrderId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
         </td>
     </tr>
 }
