@@ -16,11 +16,6 @@ namespace s00117372CA1.Controllers
         //
         // GET: /Order/
 
-        /*public ActionResult Index()
-        {
-                return View(db.Orders.ToList());
-        }*/
-
         //
         // GET: /Order/Details/5
 
@@ -28,12 +23,10 @@ namespace s00117372CA1.Controllers
         {
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             ViewBag.TotalSortParm = sortOrder == "Total" ? "total_desc" : "Total";
-            //mine
+            
             var allOrders = db.Orders
             .Where(ar => searchTerm == null || ar.FirstName.Contains(searchTerm) || ar.LastName.Contains(searchTerm));
             
-            //var findOrders = ordb.OrderDetails.Where(a => a.Album.Title.Contains(searchTerm));
-            //return View("Index", findOrders);
             switch (sortOrder)
             {
                 case "Date":
@@ -55,20 +48,8 @@ namespace s00117372CA1.Controllers
 
         public ActionResult Details(int id = 1)
         {
-            /*Order order = db.Orders.Find(id);
-            if (order == null)
-            {
-                return HttpNotFound();
-            }
-            return View(order);*/
-
             var allAlbums = db.OrderDetails.FirstOrDefault(ar=>ar.OrderId==id);
 
-            /*OrderDetail od = db.OrderDetails.Find(id);
-            if (od == null)
-            {
-                return HttpNotFound();
-            }*/
             return View(allAlbums);
         }
 
