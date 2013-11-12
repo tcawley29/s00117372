@@ -16,7 +16,7 @@ namespace s00117372CA1
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Order", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
