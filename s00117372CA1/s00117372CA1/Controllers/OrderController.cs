@@ -24,14 +24,33 @@ namespace s00117372CA1.Controllers
         //
         // GET: /Order/Details/5
 
-        public ActionResult Index(string searchTerm)
+        public ActionResult Index(string sortOrder, string searchTerm)
         {
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewBag.TotalSortParm = sortOrder == "Total" ? "total_desc" : "Total";
+            //mine
             var allOrders = db.Orders
-            .Where(ar => searchTerm == null || ar.FirstName.Contains(searchTerm) || ar.LastName.Contains(searchTerm))
-            .OrderBy(a => a.OrderId);
-            return View(allOrders);
+            .Where(ar => searchTerm == null || ar.FirstName.Contains(searchTerm) || ar.LastName.Contains(searchTerm));
+            
             //var findOrders = ordb.OrderDetails.Where(a => a.Album.Title.Contains(searchTerm));
             //return View("Index", findOrders);
+            switch (sortOrder)
+            {
+                case "Date":
+                    allOrders = allOrders.OrderBy(o => o.OrderDate);
+                    break;
+                case "Date_desc":
+                    allOrders = allOrders.OrderByDescending(o => o.OrderDate);
+                    break;
+                case "Total":
+                    allOrders = allOrders.OrderBy(o => o.Total);
+                    break;
+                case "Total_desc":
+                    allOrders = allOrders.OrderByDescending(o => o.Total);
+                    break;
+            }
+
+            return View(allOrders);
         }
 
         public ActionResult Details(int id = 1)
