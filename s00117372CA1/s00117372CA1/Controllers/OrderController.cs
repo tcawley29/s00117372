@@ -55,12 +55,21 @@ namespace s00117372CA1.Controllers
 
         public ActionResult Details(int id = 1)
         {
-            Order order = db.Orders.Find(id);
+            /*Order order = db.Orders.Find(id);
             if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(order);*/
+
+            var allAlbums = db.OrderDetails.FirstOrDefault(ar=>ar.OrderId==id);
+
+            /*OrderDetail od = db.OrderDetails.Find(id);
+            if (od == null)
+            {
+                return HttpNotFound();
+            }*/
+            return View(allAlbums);
         }
 
         //

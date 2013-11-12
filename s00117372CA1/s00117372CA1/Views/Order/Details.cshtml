@@ -1,99 +1,40 @@
-﻿@model s00117372CA1.Order
+﻿@model s00117372CA1.OrderDetail
 
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
-
 <fieldset>
     <legend>Order</legend>
-
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.OrderDate)
+         @Html.DisplayNameFor(model => model.OrderId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.OrderDate)
+        @Html.DisplayFor(model => model.OrderId)
     </div>
-
+        
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Username)
+         @Html.DisplayNameFor(model => model.AlbumId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Username)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.FirstName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FirstName)
+        @Html.DisplayFor(model => model.AlbumId)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LastName)
+         @Html.DisplayNameFor(model => model.Album.Title)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LastName)
+        @Html.DisplayFor(model => model.Album.Title)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Address)
+         @Html.DisplayNameFor(model => model.Album.Artist.Name)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Address)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.City)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.City)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.State)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.State)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PostalCode)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PostalCode)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Country)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Country)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Phone)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Phone)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Email)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Total)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Total)
+        @Html.DisplayFor(model => model.Album.Artist.Name)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.OrderId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
