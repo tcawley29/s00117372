@@ -669,8 +669,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Products">
-          <End Role="Products" Type="northwndModel.Product" Multiplicity="1" />
-          <End Role="Order_Details" Type="northwndModel.Order_Detail" Multiplicity="*" />
+          <End Role="Products" Type="northwndModel.Product" Multiplicity="1" >
+          </End>
+          <End Role="Order_Details" Type="northwndModel.Order_Detail" Multiplicity="*" >
+          </End>
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="ProductID" />

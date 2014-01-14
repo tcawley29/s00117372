@@ -10,72 +10,84 @@
 <fieldset>
     <legend>Product</legend>
 
-    <div class="display-label">
+    <table>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.ProductName)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.ProductName)
-    </div>
-
-    <div class="display-label">
+            </td>
+       </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.Supplier.CompanyName)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.Supplier.CompanyName)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.Category.CategoryName)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.Category.CategoryName)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.QuantityPerUnit)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.QuantityPerUnit)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.UnitPrice)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.UnitPrice)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.UnitsInStock)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.UnitsInStock)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.UnitsOnOrder)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.UnitsOnOrder)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.ReorderLevel)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.ReorderLevel)
-    </div>
-
-    <div class="display-label">
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-right:15px; font-weight: bold;">
          @Html.DisplayNameFor(model => model.Discontinued)
-    </div>
-    <div class="display-field">
+            </td>
+            <td>
         @Html.DisplayFor(model => model.Discontinued)
-    </div>
+            </td>
+        </tr>
+    </table>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
         @Html.ActionLink("Back to List", "Index")
     </p>
 }

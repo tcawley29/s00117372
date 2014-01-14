@@ -1,0 +1,128 @@
+﻿@model S00117372CA3.Controllers.ProductViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br /><br /><br />
+<table class="table table-striped table-condensed table-hover">
+    @foreach (var item in Model.Orders)
+    {
+    <tr>
+        <div class="span1">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().OrderID)
+        </th>
+        </div>
+        <div class="span2">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().CustomerID)
+        </th>
+        </div>
+        <div class="span3">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().EmployeeID)
+        </th>
+        </div>
+        <div class="span4">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().OrderDate)
+        </th>
+        </div>
+        <div class="span5">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().RequiredDate)
+        </th>
+        </div>
+        <div class="span6">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShippedDate)
+        </th>
+        </div>
+        <div class="span7">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipVia)
+        </th>
+        </div>
+        <div class="span8">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().Freight)
+        </th>
+        </div>
+        <div class="span9">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipName)
+        </th>
+        </div>
+        <div class="span10">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipAddress)
+        </th>
+        </div>
+        <div class="span11">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipCity)
+        </th>
+        </div>
+        <div class="span12">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipRegion)
+        </th>
+        </div>
+        <div class="span13">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipPostalCode)
+        </th>
+        </div>
+        <div class="span14">
+        <th style="padding-right: 5px">
+            @Html.DisplayNameFor(model => model.Orders.First().ShipCountry)
+        </th>
+        </div>
+        <th style="padding-right: 5px"></th>
+    </tr>
+    <tr>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.OrderID)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.EmployeeID)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.RequiredDate)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShippedDate)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipVia)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.Freight)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipName)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipAddress)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipCity)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipRegion)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipPostalCode)
+        </td>
+        <td style="padding-right: 5px">
+            @Html.DisplayFor(modelItem => item.ShipCountry)
+        </td>
+    </tr>
+}
+</table>
+    </div>

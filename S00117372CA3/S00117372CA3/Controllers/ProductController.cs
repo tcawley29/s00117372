@@ -9,6 +9,12 @@ using PagedList;
 
 namespace S00117372CA3.Controllers
 {
+    public class ProductViewModel
+    {
+        public IPagedList<Product> Products { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
+    }
+
     public class ProductController : Controller
     {
         private northwndEntities db = new northwndEntities();
@@ -18,6 +24,7 @@ namespace S00117372CA3.Controllers
 
         public ActionResult Index(int? page)
         {
+            var model = new ProductViewModel();
             var products = db.Products.Include(p => p.Category).Include(p => p.Supplier).OrderBy(p => p.ProductName);
             if (Request.HttpMethod != "GET")
             {
@@ -25,20 +32,25 @@ namespace S00117372CA3.Controllers
             }
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            return View(products.ToPagedList(pageNumber, pageSize));
+            model.Products = products.ToPagedList(pageNumber, pageSize);
+            return View(model);
         }
 
         //
         // GET: /Product/Details/5
 
-        public ActionResult Details(int id = 0)
+        public PartialViewResult Sligo(int id = 0)
         {
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
+            var q = (from o in db.Order_Details
+                     where o.ProductID == id
+                     join ord in db.Orders
+                     on o.OrderID equals ord.OrderID
+                     orderby o.Quantity descending
+                     select ord);
+            var qm = q.Take(3);
+            var model = new ProductViewModel();
+            model.Orders = qm.ToList();
+            return PartialView("_Orders", model);
         }
 
         //

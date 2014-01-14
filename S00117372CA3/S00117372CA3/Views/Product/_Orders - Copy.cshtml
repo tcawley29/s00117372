@@ -1,0 +1,71 @@
+﻿@model IEnumerable<S00117372CA3.Order>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrderID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CustomerID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CustomerID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployeeID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrderDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RequiredDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RequiredDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShippedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShippedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShipVia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShipVia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Freight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Freight)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShipName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
