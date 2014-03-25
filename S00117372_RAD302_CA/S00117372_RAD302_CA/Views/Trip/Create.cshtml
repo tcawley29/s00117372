@@ -1,7 +1,32 @@
-﻿@section header {
+﻿@model S00117372_RAD302_CA.Models.Trip
+@section header {
     <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand" })</li>
                     <li class="active">@Html.ActionLink("Create Trip", "Create", "Trip", null, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Create Leg", "Create", "Leg", null, new { @class = "navbar-brand" })</li>
                 </ul>
     }
+
+<div class="form-group">
+                  
+                    @using(Html.BeginForm()){
+                    <fieldset>
+                    @Html.LabelFor(model => model.Name)
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Trip Name" })
+                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+
+                    @Html.LabelFor(model => model.StartDate)
+                    <input type="date" name="StartDate" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+
+                    @Html.LabelFor(model => model.FinishDate)
+                    <input type="date" name="FinishDate" class="form-control" />
+                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+
+                    @Html.LabelFor(model => model.MinimumGuests)
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Minimum Number Of Guests" })
+                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                    </fieldset>
+                    <input type="submit" class="btn btn-info" value="Create Trip" />
+                    }
+                </div>

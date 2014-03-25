@@ -1,0 +1,52 @@
+﻿@model IEnumerable<S00117372_RAD302_CA.Models.Leg>
+
+<div class="row-fluid" style="padding-top:4%;">
+            <table style="width:100%; padding-right:5%;">
+                <tr>
+                    <div class="span1">
+                        <th style="padding-right: 5px">
+                            Start Location
+                        </th>
+                    </div>
+                    <div class="span2">
+                        <th style="padding-right: 5px">
+                            Finish Location
+                        </th>
+                    </div>
+                    <div class="span3">
+                        <th style="padding-right: 5px">
+                            Start Date
+                        </th>
+                    </div>
+                    <div class="span4">
+                        <th style="padding-right: 5px">
+                            Finish Date
+                        </th>
+                    </div>
+                    <div class="span5">
+                        <th style="padding-right: 5px">
+                            No Guests
+                        </th>
+                    </div>
+                </tr>
+                @foreach (var item in Model) {
+                    <tr>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.StartLocation)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.FinishLocation)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.FinishDate)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.LegReg)
+                    </td>
+                    </tr>
+                }
+                </table>
+        </div>

@@ -8,12 +8,14 @@
                 </ul>
     }
 
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>*@
+
 @section featured {
     
     <div class="container" style="width:100% !important;">
     <h1 style="font-weight: bold; text-decoration: underline;">Trips</h1>
         <div class="row-fluid">
-            <table style="width:45%; padding-right:5%;">
+            <table style="width:100%; padding-right:5%;">
                 <tr>
                     <div class="span1">
                         <th style="padding-right: 5px">
@@ -80,11 +82,17 @@
                         @Html.DisplayFor(modelItem => item.Complete)
                     </td>
                     <td style="padding-right: 5px">
-                        Hello
+                        @Ajax.ActionLink("View Logs On Trip", "ListLegs", new { id = item.Name },
+                                     new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "ListLegsPlaceholder" },
+                                     new { @class = "btn btn-xs btn-info" })
                     </td>
                 </tr>
                 }
             </table>
+        </div>
+
+        <div id="ListLegsPlaceholder" style="padding-top:4%;">
+            
         </div>
     </div>
 }

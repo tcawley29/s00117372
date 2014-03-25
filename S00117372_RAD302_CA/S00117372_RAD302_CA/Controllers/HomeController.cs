@@ -11,7 +11,7 @@ namespace S00117372_RAD302_CA.Controllers
     {
 
 
-        private readonly DALITravel _repository;
+        private DALITravel _repository;
 
         public HomeController(DALITravel repository)
         {
@@ -25,11 +25,13 @@ namespace S00117372_RAD302_CA.Controllers
             return View(trips.ToList());
         }
 
-        public ActionResult TripDetails(int tripID)
+        public ActionResult ListLegs(int? tripID)
         {
-            var legs = _repository.GetLegsForTrip(tripID);
-            return PartialView("ListOfLegs", legs);
+            var legs = _repository.GetLegsForTrip(1);
+            return PartialView("_ListOfLegs", legs);
         }
+
+
 
         [HttpGet]
         public ActionResult Create()
