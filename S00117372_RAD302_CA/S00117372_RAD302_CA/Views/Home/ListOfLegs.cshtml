@@ -1,0 +1,33 @@
+﻿@model IEnumerable<S00117372_RAD302_CA.Models.Leg>
+
+@{
+    int i = 0;
+    foreach (var item in Model)
+    {
+        i++;
+        <div class="row" id="@item.ID">
+            <div class="col-md-2 text-right" >
+                <div class="btn btn-info btn-xs">@i.</div>
+
+            </div>
+           @* <div class="col-md-9" onclick=" getLegPicture('@item.FinishLocation',@item.Id) " style="cursor: pointer">*@
+    <div class="col-md-9" onclick="location.href='@Url.Action("GetLegPicture","Leg",new{cityName=item.FinishLocation})'" style="cursor: pointer">
+                <strong>
+                    @Html.DisplayFor(modelItem => item.StartLocation) -
+                    @Html.DisplayFor(modelItem => item.FinishLocation):
+
+                </strong>
+
+                @Html.DisplayFor(modelItem => item.StartDate.Day)-
+                @Html.DisplayFor(modelItem => item.FinishDate)
+
+            </div>
+            <div class="col-md-1">
+                <span class="badge" onclick=" showGuests(@item.ID) " style="cursor: pointer">
+                    @Html.DisplayFor(modelItem => item.LegReg.Count) Guests
+                </span>
+            </div>
+        </div>
+        <br />
+    }
+}

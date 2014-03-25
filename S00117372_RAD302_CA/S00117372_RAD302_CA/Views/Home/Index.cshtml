@@ -1,0 +1,90 @@
+﻿@model IEnumerable<S00117372_RAD302_CA.Models.Trip>
+
+@section header {
+    <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Create Trip", "Create", "Trip", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Create Leg", "Create", "Leg", null, new { @class = "navbar-brand" })</li>
+                </ul>
+    }
+
+@section featured {
+    
+    <div class="container" style="width:100% !important;">
+    <h1 style="font-weight: bold; text-decoration: underline;">Trips</h1>
+        <div class="row-fluid">
+            <table style="width:45%; padding-right:5%;">
+                <tr>
+                    <div class="span1">
+                        <th style="padding-right: 5px">
+                            Trip ID
+                        </th>
+                    </div>
+                    <div class="span2">
+                        <th style="padding-right: 5px">
+                            Trip Name
+                        </th>
+                    </div>
+                    <div class="span3">
+                        <th style="padding-right: 5px">
+                            Start Date
+                        </th>
+                    </div>
+                    <div class="span4">
+                        <th style="padding-right: 5px">
+                            Finish Date
+                        </th>
+                    </div>
+                    <div class="span5">
+                        <th style="padding-right: 5px">
+                            Minimum Number Guests
+                        </th>
+                    </div>
+                    <div class="span6">
+                        <th style="padding-right: 5px">
+                            Viable
+                        </th>
+                    </div>
+                    <div class="span6">
+                        <th style="padding-right: 5px">
+                            Complete
+                        </th>
+                    </div>
+                    <div class="span7">
+                        <th style="padding-right: 5px">
+                            Button Here
+                        </th>
+                    </div>
+                </tr>
+                @foreach (var item in Model) {
+                <tr>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.FinishDate)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.MinimumGuests)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.Viable)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Html.DisplayFor(modelItem => item.Complete)
+                    </td>
+                    <td style="padding-right: 5px">
+                        Hello
+                    </td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+}
