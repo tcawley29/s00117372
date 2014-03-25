@@ -28,6 +28,11 @@
                             No Guests
                         </th>
                     </div>
+                    <div class="span6">
+                        <th style="padding-right: 5px">
+                            Button Here
+                        </th>
+                    </div>
                 </tr>
                 @foreach (var item in Model) {
                     <tr>
@@ -45,6 +50,10 @@
                     </td>
                     <td style="padding-right: 5px">
                         @Html.DisplayFor(modelItem => item.Trip.Legs.Count)
+                    </td>
+                    <td style="padding-right: 5px">
+                        @Ajax.ActionLink("Add a guest", "ViewGuests", new { @gid = item.ID },
+                                     null, new { @class = "btn btn-xs btn-info" })
                     </td>
                     </tr>
                 }

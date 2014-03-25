@@ -192,6 +192,7 @@
     <Content Include="Views\Trip\Create.cshtml" />
     <Content Include="Views\Home\_ListOfLegs.cshtml" />
     <Content Include="Views\Leg\Create.cshtml" />
+    <Content Include="Views\Home\ViewGuests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

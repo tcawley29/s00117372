@@ -12,6 +12,7 @@ namespace S00117372_RAD302_CA.Controllers
 
 
         private DALITravel _repository;
+        int LegID;
 
         public HomeController(DALITravel repository)
         {
@@ -51,6 +52,23 @@ namespace S00117372_RAD302_CA.Controllers
                 _repository.AddTrip(trip);
 
                 return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ViewGuests(int legID)
+        {
+            ViewBag.GuestList = _repository.GetGuests().Select(g => new { id = g.ID, value = g.FirstName }).Distinct();
+            ViewBag.LegID = legID;
+            return View();
+        }
+
+        public ActionResult ViewGuests(GuestReg gid)
+        {
+            if (ModelState.IsValid)
+            {
+                _repository.AddGuestRegistration(gid);
             }
             return View();
         }

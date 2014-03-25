@@ -1,0 +1,23 @@
+﻿@model S00117372_RAD302_CA.Models.GuestReg
+
+@section header {
+    <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Create Trip", "Create", "Trip", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Create Leg", "Create", "Leg", null, new { @class = "navbar-brand" })</li>
+                </ul>
+    }
+
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.LegID, new { @value = ViewBag.LegId })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.GuestID)
+                @Html.DropDownList("GuestID",
+                          new SelectList(ViewBag.GuestList, "gid", "value", Model.Guest), "Select a Guest",
+                          new { @class = "form-control " })
+
+                    <input type="submit" class="btn btn-info" value="Add" />
+            </div>
+        }
