@@ -136,6 +136,7 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LegController.cs" />
     <Compile Include="Controllers\TripController.cs" />
     <Compile Include="DAL\DALITravel.cs" />
     <Compile Include="DAL\DALTravel.cs" />
@@ -190,10 +191,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Trip\Create.cshtml" />
     <Content Include="Views\Home\_ListOfLegs.cshtml" />
+    <Content Include="Views\Leg\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Leg\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

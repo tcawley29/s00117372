@@ -25,9 +25,10 @@ namespace S00117372_RAD302_CA.Controllers
             return View(trips.ToList());
         }
 
-        public ActionResult ListLegs(int? tripID)
+        [HttpGet]
+        public ActionResult ListLegs(int tripID)
         {
-            var legs = _repository.GetLegsForTrip(1);
+            var legs = _repository.GetLegsForTrip(tripID);
             return PartialView("_ListOfLegs", legs);
         }
 

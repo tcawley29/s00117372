@@ -44,7 +44,7 @@
                         @Html.DisplayFor(modelItem => item.FinishDate)
                     </td>
                     <td style="padding-right: 5px">
-                        @Html.DisplayFor(modelItem => item.LegReg)
+                        @Html.DisplayFor(modelItem => item.Trip.Legs.Count)
                     </td>
                     </tr>
                 }

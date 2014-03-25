@@ -82,7 +82,7 @@
                         @Html.DisplayFor(modelItem => item.Complete)
                     </td>
                     <td style="padding-right: 5px">
-                        @Ajax.ActionLink("View Logs On Trip", "ListLegs", new { id = item.Name },
+                        @Ajax.ActionLink("View Legs On Trip", "ListLegs", new { @tripID = item.ID },
                                      new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "ListLegsPlaceholder" },
                                      new { @class = "btn btn-xs btn-info" })
                     </td>

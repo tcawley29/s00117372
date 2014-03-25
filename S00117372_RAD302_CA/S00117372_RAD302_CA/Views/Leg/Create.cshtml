@@ -1,0 +1,30 @@
+﻿@model S00117372_RAD302_CA.Models.Leg
+@section header {
+    <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Create Trip", "Create", "Trip", null, new { @class = "navbar-brand" })</li>
+                    <li class="active">@Html.ActionLink("Create Leg", "Create", "Leg", null, new { @class = "navbar-brand" })</li>
+                </ul>
+    }
+<div class="form-group">  
+                    @using(Html.BeginForm()){
+                    @Html.LabelFor(model => model.Trip.ID)
+                    @Html.DropDownList("TripId",
+                        new SelectList(ViewBag.TripList, "id", "value", 0), "Select a trip",
+                        new { @class = "form-control " })
+
+                    @Html.LabelFor(model => model.StartLocation)
+                    @Html.TextBoxFor(model => model.StartLocation, new { @class = "form-control", placeholder = "Name of start location" })
+
+                    @Html.LabelFor(model => model.FinishLocation)
+                    @Html.TextBoxFor(model => model.FinishLocation, new { @class = "form-control", placeholder = "Name of finish location" })
+
+                    @Html.LabelFor(model => model.StartDate)
+                    <input type="date" name="StartDate" class="form-control" />
+                        
+                    @Html.LabelFor(model => model.FinishDate)
+                    <input type="date" name="FinishDate" class="form-control" />
+                        
+                    <input type="submit" class="btn btn-info" value="Create Leg" />
+                    }
+    </div>

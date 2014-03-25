@@ -13,19 +13,15 @@
                     <fieldset>
                     @Html.LabelFor(model => model.Name)
                     @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Trip Name" })
-                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
 
                     @Html.LabelFor(model => model.StartDate)
                     <input type="date" name="StartDate" class="form-control" />
-                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
 
                     @Html.LabelFor(model => model.FinishDate)
                     <input type="date" name="FinishDate" class="form-control" />
-                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
 
                     @Html.LabelFor(model => model.MinimumGuests)
-                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Minimum Number Of Guests" })
-                    @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                    @Html.TextBoxFor(model => model.MinimumGuests, new { @class = "form-control", placeholder = "Minimum Number Of Guests" })
                     </fieldset>
                     <input type="submit" class="btn btn-info" value="Create Trip" />
                     }
